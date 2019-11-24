@@ -47,7 +47,7 @@ void setup(void){
 	fd = wiringPiI2CSetup(BNO055_ADDRESS_A) ;
 	if (fd < 0)
 	cout << "Error setting up the I2C device: " << strerror(errno) << endl;
-	/* Unnecessary: Check the chip ID to see if it matches BNO55. */
+	/* Unnecessary: Check the chip ID to see if it matches BNO055. */
 	int id = wiringPiI2CReadReg8(fd, BNO055_CHIP_ID_ADDR);
 	
 	if (id != BNO055_ID) {
@@ -58,7 +58,7 @@ void setup(void){
 		}
 	}
 	
-	/* Unnecessary: Check the chip ID to see if it matches BNO55's. */
+	/* Unnecessary: Check the chip ID to see if it matches BNO055's. */
 	int mode = wiringPiI2CReadReg8(fd, BNO055_OPR_MODE_ADDR);
 	if (mode == 0)
 		cout << "Current mode: Config mode" << endl;
